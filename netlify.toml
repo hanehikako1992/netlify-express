@@ -1,3 +1,8 @@
 [build]
+<<<<<<< HEAD
   command = "npm install"
   functions = "functions"
+=======
+	command = "npm install && npm run build"
+	functions = "server"
+>>>>>>> 15a411da4eb35d66bc229f209e8f229339bd1d39
