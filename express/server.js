@@ -10,15 +10,15 @@ require("dotenv").config({ path: "./config.env" });
 
 const router = express.Router();
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'express/build', 'index.html'));
 });
-router.use(require("./routes/user"));
+router.use(require("./express/routes/user"));
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, 'express/build', 'index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
