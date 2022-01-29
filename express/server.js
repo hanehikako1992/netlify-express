@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'express/build', 'index.html'));
 });
-router.use(require("./express/routes/user"));
+router.use(require("./routes/user"));
 
 app.use(cors());
 app.use(express.json());
